@@ -1,1 +1,20 @@
-<h1> Tralalalalala</h1>
+
+</br>
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="card col text-center" style="width: 18rem;" >
+          <%= image_tag "chat.jpg", class: "card-img-top", alt: "Card image cap" %>
+        <div class="card-body">
+          <h3 class="card-title">Titre : <%=@item.title%> </h3>
+          <h4 class="card-text">Description : <%=@item.description%> </h4>
+          <h2 class="card-title">Prix : <%=@item.prix%> €</h2>
+          <%= link_to"Buy Picture", item_path(@id = @item.id), class: "btn btn-dark btn-lg btn-block" %>
+        </div>
+        <div class="card-footer">
+           <small class="text-muted">★ ★ ★ ★ ☆</small>
+        </div>
+      </div>
+    
+  </div>
+</div>
+</br>
