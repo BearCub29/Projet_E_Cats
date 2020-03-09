@@ -11,7 +11,7 @@ gem 'stripe'
 
 gem 'faker'
 
-gem 'dotenv_rails'
+gem 'dotenv-rails'
 
 
 
