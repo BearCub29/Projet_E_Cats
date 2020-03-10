@@ -6,7 +6,29 @@
           <h3 class="card-title">Titre : <%=@item.title%> </h3>
           <h4 class="card-text">Description : <%=@item.description%> </h4>
           <h2 class="card-title">Prix : <%=@item.prix%> €</h2>
-          <%= link_to"Buy Picture", item_path(@id = @item.id), class: "btn btn-dark btn-lg btn-block" %>
+
+
+      
+        <% if Cart.find_by(user_id: current_user.id) %>
+
+        You alredy added this to your cart
+        <% else %>
+        
+        <%= form_tag(carts_path, :method => "post" ) do %>
+          <%= hidden_field_tag :item_id, @item.id %>
+          <%= button_to"add to cart", carts_path %>
+          <% end %>
+
+        <% end %>
+
+
+
+
+
+
+
+
+
         </div>
         <div class="card-footer">
            <small class="text-muted">★ ★ ★ ★ ☆</small>
