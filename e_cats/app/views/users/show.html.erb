@@ -1,0 +1,65 @@
+
+ 
+  </br>
+
+
+  <div class="container ">
+<div class="row justify-content-center">
+  <div class="card col-lg-3 col-md-12 col-sm-12 text-center p-0 m-2" style="width: 18rem;" >
+    <%= image_tag "chat.jpg", class: "card-img-top p-2", alt: "Card image cap" %>
+    <div class="card-body p-0">
+      <h3 class="card-header"> <%=@user.first_name %> <%=@user.last_name %> </h3>
+      <h4 class="card-text"> Description : <%=@user.description %> </h4>
+      </br>
+      <h4 class="card-text"> @ : <%=@user.first_name %> </h4>
+      <h4 class="card-text"> City : <%=@user.city %> <%=@user.zip_code %> </h4>
+    </div>
+    <div class="card-footer">
+    <%= link_to"Edit profil", user_path(@id = @user.id), class: "btn btn-dark btn-lg btn-block" %>
+    </div>
+  </div>
+  <div class="col-lg-8 col-md-12 col-sm-12">
+  <div class="container">
+    <div class= "row justify-content-center"
+      <div class="card col-12">
+        <div class="card-body  border-dark bg-primary text-white rounded">
+        <h2> Commande </h2>
+        </div>
+      </div>
+    </div> 
+    </br>
+    <div class= "row justify-content-center ">
+      <div class="container">
+        <div class="card col p-0 m-1" >
+        <div class="card-header">
+          <h3> <i class="fas fa-shopping-cart"></i> Panier </h3>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"> <i class="fas fa-cat"></i> Titre photo : tralalala Description : yfecghekolpfghjklmfghjkljklghjkl</li>
+          <li class="list-group-item"> <i class="fas fa-cat"></i> Titre photo : tralalala Description : yfecghekolpfghjklmfghjkljklghjkl</li>
+          <li class="list-group-item"> <i class="fas fa-cat"></i> Titre photo : tralalala Description : yfecghekolpfghjklmfghjkljklghjkl</li>
+        </ul>
+      </div>
+      </div>
+    </div>
+    </br>
+    <div class= "row justify-content-center ">
+      <div class="container">
+        <div class="card col p-0 m-1" >
+        <div class="card-header">
+          <h3> <i class="fas fa-box-open"></i> Commande </h3>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"> <i class="fas fa-cat"></i> Titre photo : tralalala Description : yfecghekolpfghjklmfghjkljklghjkl</li>
+          <li class="list-group-item"> <i class="fas fa-cat"></i> Titre photo : tralalala Description : yfecghekolpfghjklmfghjkljklghjkl</li>
+          <li class="list-group-item"> <i class="fas fa-cat"></i> Titre photo : tralalala Description : yfecghekolpfghjklmfghjkljklghjkl</li>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+</br>
+ 
