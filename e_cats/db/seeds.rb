@@ -17,7 +17,7 @@ require 'faker'
     password_confirmation: "123456"
     )
 end
-05.times do
+20.times do
   Item.create!(
     title: Faker::Creature::Cat.breed, 
     description: Faker::Lorem.paragraph,
