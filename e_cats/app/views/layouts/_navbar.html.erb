@@ -27,7 +27,7 @@
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-            <li><%= link_to"Profil",root_path, class: "dropdown-item" %></li>
+            <li><%= link_to"Profil",user_path(current_user.id), class: "dropdown-item" %></li>
             <li><%= link_to"Panier",carts_path, class: "dropdown-item" %></li>
 
             <li><%= link_to "Se deconnecter",destroy_user_session_path, :method => :delete, class: "dropdown-item" %></li>
