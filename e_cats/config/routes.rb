@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  get 'avatars/create'
   devise_for :users
-  resources :users 
+  resources :users, only: [:show, :edit, :update] do
+    resources :avatars, only: [:create]
+  end
   resources :items 
   root to: "items#index"
 
