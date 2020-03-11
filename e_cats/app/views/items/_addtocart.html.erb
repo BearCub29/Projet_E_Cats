@@ -1,0 +1,24 @@
+<% if current_user.nil? %>
+<p>you should sing in or sing up to add this article </p>
+<%= link_to"Se connecter",new_user_session_path, class: "btn btn-dark" %>
+
+<% elsif (JoinItemCart.find_by(cart_id: Cart.find_by(user_id: current_user.id), item_id: @item.id )) %>
+
+    <%= link_to "Delete", join_item_cart_path(JoinItemCart.find_by(cart_id: Cart.find_by(user_id: current_user.id), item_id: @item.id )), method: :delete, class: "btn btn-outline-dark" %>
+
+<% elsif %>
+  <% if (@cart = Cart.find_by(user_id: current_user.id)) %>
+    <%= form_tag(carts_path, :method => "post" ) do %>
+      <%= hidden_field_tag :cart_id, @cart.id %>
+      <%= hidden_field_tag :item_id, @item.id %>
+      <%= button_to"add to cart", carts_path,class: "btn btn-outline-dark" %>
+      <% end %>
+
+  <% else %>
+    <% Cart.create(user_id: current_user.id) %>
+    <%= form_tag(carts_path, :method => "post" ) do %>
+      <%= hidden_field_tag :item_id, @item.id %>
+      <%= button_to"create and add to cart", carts_path %>
+      <% end %>
+  <% end %>
+<% end %>

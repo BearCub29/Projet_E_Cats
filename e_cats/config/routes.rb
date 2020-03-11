@@ -3,4 +3,13 @@ Rails.application.routes.draw do
   resources :users 
   resources :items 
   root to: "items#index"
+
+  get 'users/index'
+
+  resources :carts 
+
+#only destroy
+  resources :join_item_carts
+
+
 end
