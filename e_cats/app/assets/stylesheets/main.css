@@ -1,0 +1,29 @@
+body{
+  background-color: #FFFCCA;
+}
+
+.jumbotron{
+  background-color: #CEEEDF;
+}
+
+.bg-rose{
+  background-color: #FFD9F6;
+}
+
+.text-bleuk{
+  color: #A6ECFE;
+}
+
+.btn-success{
+  background-color: #A6ECFE;
+  border-color: #A6ECFE;
+}
+
+.btn-primary{
+  background-color: #C4C2E3;
+  border-color: #C4C2E3;
+}
+
+.bg-primary{
+  background-color: #FFD9F6;
+}
