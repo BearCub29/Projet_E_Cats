@@ -9,15 +9,14 @@
 
           <%= link_to "Delete", join_item_cart_path(join.id), method: :delete, class: "btn btn-outline-dark" %>
           <i class="fas fa-trash-alt"></i>
-
-
           </li>
           </ul>
           <% @total += Item.find(join.item_id).prix  %>
 
           <% end %>
     <p>total :  <%= @total %> €</p>
-    <button class="btn btn-outline-dark">Pay <%= @total %> €</button>
+    
+    <%= render "paybycart" %>
 
   </div>
 </div>

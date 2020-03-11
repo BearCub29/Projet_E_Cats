@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
 #only destroy
   resources :join_item_carts
-
+  
+  resources :charges
 
 end
