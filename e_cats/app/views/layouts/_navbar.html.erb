@@ -23,10 +23,11 @@
     <% if user_signed_in? %>
         <div class="dropdown">
           <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Profil/Se deconnecter
+              <%= current_user.email %>
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <li><%= link_to"Profil",root_path, class: "dropdown-item" %></li>
+            <li><%= link_to"Panier",carts_path, class: "dropdown-item" %></li>
             <li><%= link_to "Se deconnecter",destroy_user_session_path, :method => :delete, class: "dropdown-item" %></li>
           </div>
         </div>

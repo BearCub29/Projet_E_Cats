@@ -1,4 +1,4 @@
-<div class="container ">
+<div class="container">
   <div class="row justify-content-center">
       <div class="card col-lg-8 col-md-8 col-sm-12 text-center p-0 m-2" style="width: 18rem;" >
           <%= image_tag "chat.jpg", class: "card-img-top p-2", alt: "Card image cap" %>
@@ -7,28 +7,8 @@
           <h4 class="card-text">Description : <%=@item.description%> </h4>
           <h2 class="card-title">Prix : <%=@item.prix%> €</h2>
 
-
-      
-        <% if Cart.find_by(user_id: current_user.id) %>
-
-        You alredy added this to your cart
-        <% else %>
-        
-        <%= form_tag(carts_path, :method => "post" ) do %>
-          <%= hidden_field_tag :item_id, @item.id %>
-          <%= button_to"add to cart", carts_path %>
-          <% end %>
-
-        <% end %>
-
-
-
-
-
-
-
-
-
+          <%= render 'addtocart' %>
+          
         </div>
         <div class="card-footer">
            <small class="text-muted">★ ★ ★ ★ ☆</small>

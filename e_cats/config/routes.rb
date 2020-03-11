@@ -7,5 +7,8 @@ Rails.application.routes.draw do
 
   resources :carts 
 
+#only destroy
+  resources :join_item_carts
+
 
 end
