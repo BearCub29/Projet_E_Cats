@@ -1,5 +1,8 @@
 body{
-  background-color: #FFFCCA;
+  background-image: url('fond_cat.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .jumbotron{
