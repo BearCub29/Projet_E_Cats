@@ -1,5 +1,5 @@
 body{
-  background-image: url('fond_cat.jpg');
+  background-image: url(asset_path('images/fond_cat.jpg'));
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
