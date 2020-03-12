@@ -7,7 +7,7 @@
         </div>
         <ul class="list-group list-group-flush">
         <% @joins.each do |join| %>
-          <li class="list-group-item"> <i class="fas fa-cat"></i><p> Title photo : <%= @item =  Item.find(join.item_id).title %> </p><p> Price : <%= Item.find(join.item_id).prix %> € </p>
+          <li class="list-group-item"> <i class="fas fa-cat"></i><p> Titre photo : <%= @item =  Item.find(join.item_id).title %> </p><p> Prix : <%= Item.find(join.item_id).prix %> € </p>
 
           <%= link_to "Delete", join_item_cart_path(join.id), method: :delete, class: "btn btn-outline-dark" %>
           <i class="fas fa-trash-alt"></i>
