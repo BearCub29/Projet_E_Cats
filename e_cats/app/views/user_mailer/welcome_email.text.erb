@@ -1,8 +1,10 @@
-Salut et bienvenue chez nous !
+Bienvenue chez nous !
 ==========================================================
  
 Tu t'es inscrit sur E-cats.fr en utilisant l'e-mail suivant : <%= @user.email %>.
  
-Pour accéder à ton espace client, connecte-toi via : <%= @url %>.
+Pour accéder à ton espace client, connecte-toi via : <%= link_to "Profil", user_url(@user, host: 'http://localhost:3000/users/22' ) %>.
  
-À très vite sur E-cats.fr !
+Tu vas pouvoir profiter de nombreux avantages et parcourir l'ensemble de notre catalogue de photos!!!
+
+À très vite sur Cat Land !

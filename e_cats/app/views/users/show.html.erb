@@ -6,7 +6,16 @@
   <div class="container ">
 <div class="row justify-content-center">
   <div class="card col-lg-3 col-md-12 col-sm-12 text-center p-0 m-2" style="width: 18rem;" >
-    <%= image_tag "chat.jpg", class: "card-img-top p-2", alt: "Card image cap" %>
+  <%if @user.avatar.attached?%>
+    <%= image_tag @user.avatar, alt: 'avatar' %>
+  <%else%>
+    <%= image_tag "cat.png", class: "card-img-top p-2", alt: "Card image cap" %>
+  <%end%>
+  <h3>Changer d avatar ?</h3>
+<%= form_tag user_avatars_path(@user), multipart: true do %>
+  <%= file_field_tag :avatar %>
+  <%= submit_tag "mettre à jour", class: "btn btn-primary" %>
+<% end %>
     <div class="card-body p-0">
       <h3 class="card-header"> <%=@user.first_name %> <%=@user.last_name %> </h3>
       <h4 class="card-text"> Description : <%=@user.description %> </h4>
@@ -15,15 +24,15 @@
       <h4 class="card-text"> City : <%=@user.city %> <%=@user.zip_code %> </h4>
     </div>
     <div class="card-footer">
-    <%= link_to"Edit profil", edit_user_path(current_user.id), class: "btn btn-dark btn-lg btn-block" %>
-    <%= link_to"Edit security",  edit_user_registration_path, class: "btn btn-dark btn-lg btn-block" %>
+    <%= link_to"Edit profil", edit_user_path(current_user.id), class: "btn btn-success btn-lg btn-block" %>
+    <%= link_to"Edit security",  edit_user_registration_path, class: "btn btn-primary btn-lg btn-block" %>
     </div>
   </div>
   <div class="col-lg-8 col-md-12 col-sm-12">
   <div class="container">
     <div class= "row justify-content-center"
       <div class="card col-12">
-        <div class="card-body  border-dark bg-primary text-white rounded">
+        <div class="card-body  border-dark bg-green text-white rounded">
         <h2> Commande </h2>
         </div>
       </div>

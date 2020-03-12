@@ -1,0 +1,9 @@
+<h1 class="text-center my-2">Bienvenue sur le Dashboard Admin</h1>
+
+<div>
+
+
+<p><b>Nombre de produits en vente : <%= @admin_items.count %> </b></p>
+<p><b>Prix moyen d'un article : <%= @admin_items.map{ |item| item.prix }.sum / @admin_items.count %> € </b></p>
+
+</div>

@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  def index
-  end
+  before_action :authenticate_user, only: [:show]
   def show
     @user = User.find(current_user.id)
   end
@@ -15,5 +14,13 @@ class UsersController < ApplicationController
       else
         render :edit
       end
+  end
+  private
+
+  def authenticate_user
+    unless current_user
+      flash[:danger] = "Please log in."
+      redirect_to user_session_path
+    end
   end
 end
