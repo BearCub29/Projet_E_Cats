@@ -23,7 +23,11 @@
     <% if user_signed_in? %>
       <div class="dropdown">
         <a type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+        <% if current_user.avatar.attached? %>
           <%= image_tag current_user.avatar, width: 60, height: 60, class: "d-inline-block align-top", alt: "Cat Land"  %>
+        <% else %>
+          <%= image_tag "cat.png", width: 60, height: 60, class: "d-inline-block align-top", alt: "Cat Land"  %>
+        <% end %>
         </a>
         <div class="dropdown-menu dropdown-menu-sm-right dropdown-menu-md-lg-xl-left bg-blue border-white " aria-labelledby="dropdownMenuButton">
           <li><%= link_to"Profil",user_path(current_user.id), class: "dropdown-item text-white font-weight-bold shadowgrey" %></li>
@@ -36,9 +40,9 @@
     <% else %>
       <div class="dropdown">
         <a type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-          <%= image_tag "cat.png", width: 30, height: 30, class: "d-inline-block align-top", alt: "Cat Land"  %>
+          <%= image_tag "cat.png", width: 60, height: 60, class: "d-inline-block align-top", alt: "Cat Land"  %>
         </a>
-        <div class="dropdown-menu bg-blue border-white" aria-labelledby="dropdownMenuButton">
+        <div class="dropdown-menu dropdown-menu-sm-right dropdown-menu-md-lg-xl-left bg-blue border-white" aria-labelledby="dropdownMenuButton">
           <li><%= link_to"S'inscrire",new_user_registration_path, class: "dropdown-item text-white font-weight-bold shadowgrey" %></li>
           <hr class="my-1 bg-white">
           <li><%= link_to"Se connecter",new_user_session_path, class: "dropdown-item text-white font-weight-bold shadowgrey" %></li>
