@@ -14,5 +14,12 @@ Rails.application.routes.draw do
 #only destroy
   resources :join_item_carts
 
+  scope 'admin', module: 'admin', as: 'admin' do
+    resources :dashboard, only: [:index]
+    resources :users
+    resources :orders
+    resources :items
+  end
+
 
 end
