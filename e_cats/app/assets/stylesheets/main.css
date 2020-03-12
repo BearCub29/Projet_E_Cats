@@ -1,23 +1,58 @@
+
 body{
   background-image: url('fond_cat.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  
 }
-
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Fredoka One', cursive;
+}
+.shadowgrey{
+  text-shadow: 1px 1px 1px grey;
+}
+.fredoka{
+  font-family: 'Fredoka One', cursive;
+}
 .jumbotron{
-  background-color: #CEEEDF;
+  background-color: black;
+  border: 5px solid #eaaf3a;
+  font-family: 'Fredoka One', cursive;
+  color: whitesmoke;
 }
-
+/* ----------------------- bg-perso -------------------------- */
 .bg-green{
   background-color: #CEEEDF;
 }
 .bg-rose{
   background-color: #FFD9F6;
 }
-
-.text-bleuk{
-  color: #A6ECFE;
+.bg-blue{
+  background-color: #A6ECFE;
+  
+}
+.bg-purple{
+  background-color: #C4C2E3;
+}
+.bg-yellow{
+  background-color: #FFFCCA;
+}
+/* ----------------------- text-perso -------------------------- */
+.text-blue{
+  color: #A6ECFE !important;
+}
+.text-rose{
+  color: #FFD9F6 !important;
+}
+.text-green{
+  color: #CEEEDF !important;
+}
+.text-purple{
+  color: #C4C2E3 !important;
+}
+.text-yellow{
+  color: #FFFCCA !important;
 }
 
 .btn-success{
@@ -30,3 +65,10 @@ body{
   border-color: #C4C2E3;
 }
 
+.col-ws{
+  color: whitesmoke;
+}
+
+.size-navbar{
+  font-weight: 900 !important;
+}
