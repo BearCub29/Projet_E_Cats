@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users 
+  
+  resources :orders
+  resources :users
+
   resources :items 
   root to: "items#index"
 
@@ -12,5 +15,6 @@ Rails.application.routes.draw do
   resources :join_item_carts
   
   resources :charges
+
 
 end

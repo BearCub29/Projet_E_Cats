@@ -16,7 +16,10 @@ class ChargesController < ApplicationController
       description: 'Rails Stripe customer',
       currency: 'usd',
     })
-  
+
+  Order.create(cart_id: current_cart.id, stripetoken: params[:stripeToken])
+  JoinItemCart.where(cart_id: current_cart.id).update(payed: true)
+
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path

@@ -4,8 +4,7 @@ class JoinItemCartsController < ApplicationController
     @join = JoinItemCart.find(params[:id])
     @join.destroy
   end
-
-
+  
   def index
     @total = 0
     @cart = Cart.where(user_id: current_user.id)
@@ -17,9 +16,6 @@ class JoinItemCartsController < ApplicationController
   end
 
   def new
-    puts "new" * 100
-  
-    puts "new" * 100
   end
 
 
