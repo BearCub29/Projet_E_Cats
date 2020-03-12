@@ -55,8 +55,17 @@ ActiveRecord::Schema.define(version: 2020_03_12_144846) do
     t.datetime "updated_at", null: false
     t.bigint "cart_id"
     t.bigint "item_id"
+    t.boolean "payed"
     t.index ["cart_id"], name: "index_join_item_carts_on_cart_id"
     t.index ["item_id"], name: "index_join_item_carts_on_item_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "cart_id"
+    t.string "stripetoken"
+    t.index ["cart_id"], name: "index_orders_on_cart_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -82,5 +91,6 @@ ActiveRecord::Schema.define(version: 2020_03_12_144846) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "join_item_carts", "carts"
   add_foreign_key "join_item_carts", "items"
+  add_foreign_key "orders", "carts"
   add_foreign_key "users", "carts"
 end
