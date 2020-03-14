@@ -2,7 +2,7 @@
 <p>you should sing in or sing up to add this article </p>
 <%= link_to"Se connecter",new_user_session_path, class: "btn btn-dark" %>
 
-<% elsif (JoinItemCart.find_by(cart_id: Cart.find_by(user_id: current_user.id), item_id: @item.id )) %>
+<% elsif (JoinItemCart.find_by(cart_id: Cart.find_by(user_id: current_user.id), item_id: @item.id ) && JoinItemCart.find_by(payed: false)) %>
 
     <%= link_to "Delete", join_item_cart_path(JoinItemCart.find_by(cart_id: Cart.find_by(user_id: current_user.id), item_id: @item.id )), method: :delete, class: "btn btn-outline-dark" %>
 
