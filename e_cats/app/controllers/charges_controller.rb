@@ -19,6 +19,7 @@ class ChargesController < ApplicationController
 
   Order.create(cart_id: current_cart.id, stripetoken: params[:stripeToken])
   JoinItemCart.where(cart_id: current_cart.id).update(payed: true)
+  current_cart.update(id: current_cart.id)
   redirect_to root_path
   rescue Stripe::CardError => e
     flash[:error] = e.message

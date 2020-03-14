@@ -3,7 +3,7 @@ class CartsController < ApplicationController
 
   def show
     @total = 0
-    @orders = Order.where(cart_id: current_cart.id)
+    @orders = JoinItemCart.where(cart_id: current_cart.id, payed: false)
   end
 
   def index
